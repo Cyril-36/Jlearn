@@ -1,0 +1,28 @@
+{
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Java Fundamentals & Syntax",
+      "topics": [
+        {
+          "id": "variables-datatypes",
+          "title": "Variables & Data Types",
+          "problems": [
+            {
+              "id": "U1T1P001",
+              "title": "Add Two Numbers",
+              "difficulty": "Easy",
+              "description": "Given two integers, return their sum.",
+              "starterCode": "public class Solution {\n    public static int addNumbers(int a, int b) {\n        // TODO: implement\n        return 0;\n    }\n}",
+              "solution": "public class Solution {\n    public static int addNumbers(int a, int b) {\n        return a + b;\n    }\n}",
+              "tests": [
+                { "input": [1, 2], "output": 3 },
+                { "input": [-5, 10], "output": 5 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
