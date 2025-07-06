@@ -12,7 +12,7 @@ app.use('/api/submit', submitRoute);
 describe('POST /api/submit', () => {
   it('should return a verdict', async () => {
     const res = await request(app).post('/api/submit').send({
-      challengeId: 'java-if-else',
+      challengeId: 'unit-i-introduction-to-java-1',
       code: `public class Solution {
         public static void main(String[] args) {
           java.util.Scanner sc = new java.util.Scanner(System.in);
