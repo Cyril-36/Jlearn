@@ -18,14 +18,12 @@ router.post('/', async (req, res) => {
       return res.json({ verdict: 'Failed', output: result.stderr });
     }
 
-    // Compare output with hidden tests
+    // Compare output with challenge test cases if provided
     let allPassed = true;
-    for (const test of challenge.hiddenTests) {
+    const tests = challenge.testCases || [];
+    for (const test of tests) {
       const hiddenResult = await runJavaCode(code, test.input);
-      if (
-        !hiddenResult.success ||
-        hiddenResult.stdout.trim() !== test.output.trim()
-      ) {
+      if (!hiddenResult.success || hiddenResult.stdout.trim() !== test.output.trim()) {
         allPassed = false;
         break;
       }
