@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/challenge/:id" element={<ChallengeWorkspace />} />
+          <Route path="/challenge/:id/*" element={<ChallengeWorkspace />} />
           {/* Optional: 404 fallback */}
           <Route path="*" element={<div className="text-white p-6">404: Page Not Found</div>} />
         </Routes>
