@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Editor from "@monaco-editor/react";
@@ -12,7 +13,8 @@ const sampleTests = [
   { id: 2, input: "7\n3", expected: "10" },
 ];
 
-const ChallengeWorkspace = ({ challengeId = "660000000000000000000000" }) => {
+const ChallengeWorkspace = () => {
+  const { id: challengeId } = useParams();  // 👈 this is the key fix
   const [code, setCode] = useState(
     `import java.util.*;\n\npublic class Main {\n  public static void main(String[] args) {\n    Scanner sc = new Scanner(System.in);\n    int a = sc.nextInt();\n    int b = sc.nextInt();\n    System.out.println(a + b);\n  }\n}`
   );
