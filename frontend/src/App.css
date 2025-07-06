@@ -1,0 +1,5 @@
+/* Global Styles for CodeArena */
+body {
+  @apply bg-zinc-900 text-white;
+  font-family: 'Inter', sans-serif;
+}
