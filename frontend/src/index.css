@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --color-jlearn-bg: #131313;
+  --color-jlearn-surface-low: #1c1b1b;
+  --color-jlearn-surface-high: #2a2a2a;
+  --color-jlearn-surface-highest: #353534;
+  --color-jlearn-text: #e5e2e1;
+  --color-jlearn-primary: #fffffd;
+  --color-jlearn-cyan: #00ffd1;
+  --color-jlearn-cyan-dim: #00e0b7;
+
+  --shadow-glow: 0 4px 12px rgba(0, 255, 209, 0.15);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-jlearn-bg);
+    color: var(--color-jlearn-text);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-jlearn-primary) 0%, var(--color-jlearn-cyan-dim) 100%);
+    color: #00382c;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-secondary {
+    color: var(--color-jlearn-cyan);
+    background: transparent;
+    border: 1px solid rgba(58, 74, 68, 0.2);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-jlearn-surface-high);
+  }
+
+  .shadow-ambient {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-jlearn-surface-low);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-jlearn-surface-high);
+    border-radius: 999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-jlearn-surface-highest);
+  }
+}
