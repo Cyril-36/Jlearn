@@ -1,0 +1,29 @@
+# Replace yourdomain.com with your actual domain.
+# Caddy automatically obtains and renews TLS certificates from Let's Encrypt.
+
+yourdomain.com {
+    # API requests → backend
+    handle /api/* {
+        reverse_proxy backend:8080
+    }
+
+    # Everything else → frontend SPA
+    handle {
+        reverse_proxy frontend:80
+    }
+
+    # Security headers
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        -Server
+    }
+
+    encode gzip
+    log {
+        output stdout
+        format json
+    }
+}
